@@ -28,3 +28,36 @@ Para evitar el proceso de detener nuestro servidor cada que ejecutamos un nuevo 
 ```sh
 npm i nodemon -D
 ```
+
+## Custom Types 
+Para este proyecto vamos a seguir el estándar de estilos Standard, para instalarlo corremos el siguiente comando: `npm i standard -D`
+
+GraphQL nos permite configurar nuestros propios tipos de datos, estos deben tener la siguientes sintaxis:
+
+```js
+type <Nombre del tipo> {
+  propiedad: Tipo de dato
+}
+```
+
+Dentro de nuestros tipos de datos podemos configurar un campo de un tipo como obligatorio con el signo "!", quedando por ejemplo:
+
+```js
+type Course {
+  title: String!
+}
+```
+
+## Argumentos
+Vamos a instalar una nueva dependencia para facilitar el trabajo con GraphQL: `npm i graphql-tools`
+
+Podemos pasar argumentos con distintos tipos de información dentro de las peticiones que hagamos en GraphQL, su sintaxis quedaría de la siguiente manera:
+
+```ts
+nombreQuery(campo: tipo): tipo
+```
+
+Dentro del resolver los argumentos de la petición pasarían como segundo parámetro, el primero es `root` y el segundo es `args`.
+
+## Configuración de base de datos
+Es recomendable almacenar las credenciales de conexión a la base de datos como variables de entorno del sistema y utilizar dotenv para la lectura de dichas credenciales. `npm i dotenv`
