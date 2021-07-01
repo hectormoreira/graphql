@@ -61,3 +61,58 @@ Dentro del resolver los argumentos de la petición pasarían como segundo parám
 
 ## Configuración de base de datos
 Es recomendable almacenar las credenciales de conexión a la base de datos como variables de entorno del sistema y utilizar dotenv para la lectura de dichas credenciales. `npm i dotenv`
+
+## Mutations e Inputs
+Un mutation va a requerir de un campo de tipo Input que son como plantillas que le van a indicar qué campos son necesarios para insertar o modificar información.
+
+La sintaxis de una mutation queda de la siguiente manera:
+```js
+nombreMutation(input: InputType): tipo
+
+
+mutation {
+  createCourse(input:{
+    title: "Curso de ejemplo 4"
+    description: "Descripción 4"
+    topic: "Diseño"
+  }){
+    _id
+    title
+    description
+  }
+}
+
+
+#Create
+mutation{
+  createStudent(input:{
+    name: "Monkey D' Dragon"
+    email: "dragon@onepiece.com"
+  }){
+    _id
+    name
+    email
+  }
+}
+
+#edit
+mutation{
+  editStudent(_id: "60dd35955b8f690ab01855e1", input:{
+    name: "Roronoa Zoro"
+    email: "zoro@onepiece.com"
+  }){
+    _id
+    name
+    email
+  }
+}
+```
+
+
+
+
+### Dependencias
+
+```sh
+npm i mongodb
+```
