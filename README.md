@@ -66,7 +66,7 @@ Es recomendable almacenar las credenciales de conexión a la base de datos como 
 Un mutation va a requerir de un campo de tipo Input que son como plantillas que le van a indicar qué campos son necesarios para insertar o modificar información.
 
 La sintaxis de una mutation queda de la siguiente manera:
-```js
+```graphql
 nombreMutation(input: InputType): tipo
 
 
