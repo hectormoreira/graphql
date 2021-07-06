@@ -107,6 +107,9 @@ mutation{
   }
 }
 ```
+## Errores
+Si sucede un error al momento de realizar una petición GraphQL nos va a retornar un objeto llamado errors que contendrá la información del error y su mensaje. Podemos configurar el mensaje que le retorne al usuario simplemente con una función que lance un error con el mensaje que queramos.
+
 
 
 
